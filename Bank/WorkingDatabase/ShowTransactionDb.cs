@@ -7,6 +7,7 @@ namespace Bank.WorkingDatabase
     public class
         ShowTransactionDb : MainWorkDb //Класс который предназначен для получения данных и привязки к DataGridView
     {
+        //todo переделать здесь и сами транзакции
         public void SetRequest(DataGridView dataGridView, IIdentification identification)
         {
             Action = () =>

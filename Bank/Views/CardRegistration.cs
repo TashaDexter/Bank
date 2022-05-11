@@ -2,23 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using Bank.WorkingCards;
 using Bank.WorkingDatabase;
 
 namespace Bank.Views
 {
-    public partial class Registration : Form
+    public partial class CardRegistration : Form
     {
         private Card _card;
         private readonly Serialization _serialization;
         private readonly Random _random = new Random();
 
-        public Registration(Card card, Serialization serialization)
+        public CardRegistration(Card card, Serialization serialization)
         {
             InitializeComponent();
             _card = card;
             _serialization = serialization;
+            FillClients();
         }
 
         private List<ArrayList>
@@ -38,18 +40,11 @@ namespace Bank.Views
                 new ShowValuesDb().SetRequest("TypeCard", "CategoryCardID", "ID", _idTypeCard)[0][0].ToString()
             )[0][0].ToString();
 
-            //Создание новой карты как объект;
-            _card = new Card
-            {
-                FirstName = textFirstName.Text,
-                LastName = textLastName.Text,
-                Code = pinCode,
-                Id = long.Parse(cardNumber),
-                ParentName = textParentName.Text,
-                Type = type,
-                Category = category
-            };
+            var clientParams = comboClient.SelectedItem.ToString().Split(' ');
+            var clientId = clientParams.First();
             
+            var client = new ShowValuesDb().SetRequest("Clients", "*", "ID", clientId).First();
+           
             //добавление новой карты в банк
             var cardColumns = new List<string>
                 { "CardNumber", "СardСode", "CurrentBalance", "TypeCardID", "DateRececing", "IDBank" };
@@ -61,25 +56,32 @@ namespace Bank.Views
             new InsertValueDb().SetRequest("Card", cardColumns, cardValues);
 
             //добавление нового пользователя в банк
-            //todo добавить проверку, существует ли
-            var userColumns = new List<string> { "СardAccount", "FirstName", "LastName", "ParentName" };
-            var userValues = new List<string>
+            if (client == null)
             {
-                new ShowValuesDb().SetRequest("Card", "ID", "CardNumber", cardNumber.ToString())[0][0].ToString(),
-                textFirstName.Text, textLastName.Text, textParentName.Text
+                throw new Exception("Ошибка! Клиент не найден.");
+            }
+
+            //Создание новой карты как объект;
+            _card = new Card
+            {
+                FirstName = client[1].ToString(),
+                LastName = client[2].ToString(),
+                ParentName = client[3].ToString(),
+                Code = pinCode,
+                Id = long.Parse(cardNumber),
+                Type = type,
+                Category = category
             };
-            new InsertValueDb().SetRequest("Сlients", userColumns, userValues);
             
             //Сохранение объекта в фаил используя xml сериализацию 
             _serialization.Serialize(_card,
                 $"Cards\\ {_card.Id} _ {_card.FirstName} {_card.LastName} {_card.ParentName} _ {category} {type}.xml");
 
-            //todo проверка добавлен ли на самом деле
             MessageBox.Show("Карта успешно создана." +
                             "\nВаши данные:" +
                             $"\nНомер карты: {_card.Id}" +
                             $"\nПин-код: {_card.Code}" +
-                            $"\nСохраните их в надежном месте, для смены пин-кода обратитесь к администратору.");
+                            $"\nСохраните данные в надежном месте, для смены пин-кода или изменения других данных обратитесь к администратору.");
             Close();
         }
 
@@ -122,7 +124,7 @@ namespace Bank.Views
             foreach (var arr in _listArrays)
             {
                 var str =
-                    new ShowValuesDb().SetRequest("CategoryCard", "Name", "ID", arr[2].ToString())[0][0].ToString() +
+                    new ShowValuesDb().SetRequest("CategoryCard", "Name", "ID", arr[2].ToString())[0][0] +
                     " " + arr[1];
                 comboTypeCard.Items.Add(str);
             }
@@ -140,6 +142,21 @@ namespace Bank.Views
             }
 
             _listArrays.Clear();
+        }
+
+        private void FillClients()
+        {
+            var clients = new ShowValuesDb().SetRequest("Clients");
+            foreach (var client in clients)
+            {
+                var textItem = "";
+                foreach (var param in client)
+                {
+                    textItem += param.ToString().Trim() + " ";
+                }
+
+                comboClient.Items.Add(textItem);
+            }
         }
     }
 }

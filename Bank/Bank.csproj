@@ -46,11 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Transactions\DepositCash.cs" />
+    <Compile Include="Transactions\Client.cs" />
+    <Compile Include="Transactions\Deposit.cs" />
+    <Compile Include="Transactions\OperationEnum.cs" />
     <Compile Include="Transactions\ShowBalance.cs" />
     <Compile Include="Transactions\History.cs" />
-    <Compile Include="Transactions\WithdrawСash.cs" />
+    <Compile Include="Transactions\Withdraw.cs" />
     <Compile Include="Transactions\Transaction.cs" />
+    <Compile Include="Views\ClientRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ClientRegistration.Designer.cs">
+      <DependentUpon>ClientRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DepositСash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,11 +91,11 @@
     <Compile Include="Views\Operations.Designer.cs">
       <DependentUpon>Operations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Registration.cs">
+    <Compile Include="Views\CardRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Registration.Designer.cs">
-      <DependentUpon>Registration.cs</DependentUpon>
+    <Compile Include="Views\CardRegistration.Designer.cs">
+      <DependentUpon>CardRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\WithdrawСash.cs">
       <SubType>Form</SubType>
@@ -128,8 +136,8 @@
     <EmbeddedResource Include="Views\Operations.resx">
       <DependentUpon>Operations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Registration.resx">
-      <DependentUpon>Registration.cs</DependentUpon>
+    <EmbeddedResource Include="Views\CardRegistration.resx">
+      <DependentUpon>CardRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ShowBalance.resx">
       <DependentUpon>ShowBalance.cs</DependentUpon>

@@ -12,9 +12,10 @@ namespace Bank.Views
     public partial class Form1 : Form
     {
         private Card _card = new Card(); //экземпляр дла карты   
-        private readonly Money _money = new Money(); //экземпляр для наличных
+        private readonly decimal _money; //экземпляр для наличных
         private readonly Serialization _serialization; //экземпляр для сериализации
-        private Registration _registration; //экземпляр для формы регистрации карты
+        private CardRegistration _cardRegistration; //экземпляр для формы регистрации карты
+        private ClientRegistration _clientRegistration; //экземпляр для формы регистрации клиента
         private Operations _operations; //экземпляр для формы операии
         private readonly Transaction _transaction;
         private readonly List<string> _listCard = new List<string>();
@@ -28,8 +29,8 @@ namespace Bank.Views
 
         private void CardMenu_Click(object sender, EventArgs e)
         {
-            _registration = new Registration(_card, _serialization);
-            _registration.Show();
+            _cardRegistration = new CardRegistration(_card, _serialization);
+            _cardRegistration.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -61,9 +62,9 @@ namespace Bank.Views
                     connection.Open();
                     MessageBox.Show(@"База данных успешно подключена!");
                     CardMenu.Enabled = true;
+                    ClientMenu.Enabled = true;
                     ConfirmButton.Enabled = true;
                     CardComboBox.Enabled = true;
-                        
                     button0.Enabled = true;
                     button1.Enabled = true;
                     button2.Enabled = true;
@@ -162,6 +163,12 @@ namespace Bank.Views
                 CardComboBox.Items.Add(card.Id + " | " + card.Category + " - " + card.Type);
                 _listCard.Add(file.FullName);
             }
+        }
+
+        private void ClientMenu_Click(object sender, EventArgs e)
+        {
+            _clientRegistration = new ClientRegistration(_serialization);
+            _clientRegistration.Show();
         }
     }
 }

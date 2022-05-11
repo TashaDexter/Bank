@@ -4,14 +4,14 @@ namespace Bank.Transactions
 {
     public abstract class Transaction
     {
-        public delegate void DMoney(string text, Money money); //делегат для создания события    
+        public delegate void DMoney(OperationEnum operationEnum, bool isSuccess, decimal money); //делегат для создания события    
         public event DMoney EMoney; //создание события
         protected IIdentification Identification;
-        protected Money Money;
+        protected decimal Money;
 
-        protected void SendMoney(string text, Money money)
+        protected void PerformOperation(OperationEnum operationEnum, bool isSuccess, decimal money)
         {
-            EMoney?.Invoke(text, money); //вызов события
+            EMoney?.Invoke(operationEnum, isSuccess, money); //вызов события
         }
     }
 }

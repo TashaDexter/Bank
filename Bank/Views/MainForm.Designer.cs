@@ -35,6 +35,7 @@ namespace Bank.Views
             this.ConfirmButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ConnectionMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClientMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.CardMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@ namespace Bank.Views
             this.label1.Size = new System.Drawing.Size(287, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Выберите карту для работы";
-            this.label1.UseWaitCursor = true;
             // 
             // CardComboBox
             // 
@@ -72,11 +72,11 @@ namespace Bank.Views
             this.CardComboBox.Name = "CardComboBox";
             this.CardComboBox.Size = new System.Drawing.Size(496, 32);
             this.CardComboBox.TabIndex = 1;
-            this.CardComboBox.UseWaitCursor = true;
             this.CardComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // ConfirmButton
             // 
+            this.ConfirmButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.ConfirmButton.Enabled = false;
             this.ConfirmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ConfirmButton.Location = new System.Drawing.Point(206, 283);
@@ -85,19 +85,17 @@ namespace Bank.Views
             this.ConfirmButton.TabIndex = 3;
             this.ConfirmButton.Text = "Подтвердить";
             this.ConfirmButton.UseVisualStyleBackColor = true;
-            this.ConfirmButton.UseWaitCursor = true;
             this.ConfirmButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.ConnectionMenu, this.CardMenu, this.ExitMenu });
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.ConnectionMenu, this.ClientMenu, this.CardMenu, this.ExitMenu });
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(533, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.UseWaitCursor = true;
             // 
             // ConnectionMenu
             // 
@@ -105,6 +103,14 @@ namespace Bank.Views
             this.ConnectionMenu.Size = new System.Drawing.Size(180, 20);
             this.ConnectionMenu.Text = "Подключиться к базе данных";
             this.ConnectionMenu.Click += new System.EventHandler(this.ConnectionMenu_Click);
+            // 
+            // ClientMenu
+            // 
+            this.ClientMenu.Enabled = false;
+            this.ClientMenu.Name = "ClientMenu";
+            this.ClientMenu.Size = new System.Drawing.Size(166, 20);
+            this.ClientMenu.Text = "Зарегистрировать клиента";
+            this.ClientMenu.Click += new System.EventHandler(this.ClientMenu_Click);
             // 
             // CardMenu
             // 
@@ -123,6 +129,7 @@ namespace Bank.Views
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(18, 106);
             this.button1.Name = "button1";
@@ -130,11 +137,11 @@ namespace Bank.Views
             this.button1.TabIndex = 5;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.UseWaitCursor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(64, 106);
             this.button2.Name = "button2";
@@ -142,11 +149,11 @@ namespace Bank.Views
             this.button2.TabIndex = 6;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.UseWaitCursor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(110, 106);
             this.button3.Name = "button3";
@@ -154,11 +161,11 @@ namespace Bank.Views
             this.button3.TabIndex = 7;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.UseWaitCursor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(18, 152);
             this.button4.Name = "button4";
@@ -166,11 +173,11 @@ namespace Bank.Views
             this.button4.TabIndex = 8;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.UseWaitCursor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(64, 152);
             this.button5.Name = "button5";
@@ -178,11 +185,11 @@ namespace Bank.Views
             this.button5.TabIndex = 9;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.UseWaitCursor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(110, 152);
             this.button6.Name = "button6";
@@ -190,11 +197,11 @@ namespace Bank.Views
             this.button6.TabIndex = 10;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.UseWaitCursor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(18, 198);
             this.button7.Name = "button7";
@@ -202,11 +209,11 @@ namespace Bank.Views
             this.button7.TabIndex = 11;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.UseWaitCursor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(64, 198);
             this.button8.Name = "button8";
@@ -214,11 +221,11 @@ namespace Bank.Views
             this.button8.TabIndex = 12;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.UseWaitCursor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Enabled = false;
             this.button9.Location = new System.Drawing.Point(110, 198);
             this.button9.Name = "button9";
@@ -226,7 +233,6 @@ namespace Bank.Views
             this.button9.TabIndex = 13;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.UseWaitCursor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // pinCodeTextBox
@@ -237,10 +243,10 @@ namespace Bank.Views
             this.pinCodeTextBox.PasswordChar = '*';
             this.pinCodeTextBox.Size = new System.Drawing.Size(132, 32);
             this.pinCodeTextBox.TabIndex = 14;
-            this.pinCodeTextBox.UseWaitCursor = true;
             // 
             // button0
             // 
+            this.button0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button0.Enabled = false;
             this.button0.Location = new System.Drawing.Point(64, 244);
             this.button0.Name = "button0";
@@ -248,11 +254,11 @@ namespace Bank.Views
             this.button0.TabIndex = 15;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
-            this.button0.UseWaitCursor = true;
             this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             // UpdateButton
             // 
+            this.UpdateButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.UpdateButton.Enabled = false;
             this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UpdateButton.Location = new System.Drawing.Point(206, 107);
@@ -261,7 +267,6 @@ namespace Bank.Views
             this.UpdateButton.TabIndex = 16;
             this.UpdateButton.Text = "Обновить данные";
             this.UpdateButton.UseVisualStyleBackColor = true;
-            this.UpdateButton.UseWaitCursor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // Form1
@@ -285,6 +290,7 @@ namespace Bank.Views
             this.Controls.Add(this.CardComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -292,12 +298,13 @@ namespace Bank.Views
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Банкомат";
-            this.UseWaitCursor = true;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem ClientMenu;
 
         private System.Windows.Forms.Button UpdateButton;
 

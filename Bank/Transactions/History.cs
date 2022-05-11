@@ -5,7 +5,7 @@ namespace Bank.Transactions
 {
     internal class History : Transaction          //класс который предназачен для просмотра истории транзации через форму
     {
-        public History(IIdentification identification, Money money)
+        public History(IIdentification identification, decimal money)
         {
             Identification = identification;
             Money = money;

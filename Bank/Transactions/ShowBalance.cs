@@ -7,7 +7,7 @@ namespace Bank.Transactions
 {
     internal class ShowBalance : Transaction          //класс который предназначен для работы с формой просмотра баланса
     {
-        public ShowBalance(IIdentification identification, Money money)
+        public ShowBalance(IIdentification identification, decimal money)
         {
             Identification = identification;
             Money = money;

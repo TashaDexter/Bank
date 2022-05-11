@@ -9,11 +9,11 @@ namespace Bank.Views
     public partial class Operations : Form
     {
         private readonly Card _card;
-        private readonly Money _money;
+        private readonly decimal _money;
         private Transaction _transaction;
         private readonly Serialization _serialization;
 
-        public Operations(Card card, Money money, Transaction transaction, Serialization serialization)
+        public Operations(Card card, decimal money, Transaction transaction, Serialization serialization)
         {
             _serialization = serialization;
             _money = money;
@@ -30,26 +30,55 @@ namespace Bank.Views
             switch (listView1.FocusedItem.Text)
             {
                 case "Пополнить счёт":
-                    _transaction = new DepositCash(_card, _money);
+                    _transaction = new Deposit(_card, _money);
                     break;
                 case "Вывести наличные":
-                    _transaction = new Transactions.WithdrawСash(_card, _money);
+                    _transaction = new Transactions.Withdraw(_card, _money);
                     break;
                 case "Посмотреть баланс":
                     _transaction = new Transactions.ShowBalance(_card, _money);
                     break;
-                case "История транзакции":
+                case "История транзакций":
                     _transaction = new Transactions.History(_card, _money);
+                    break;
+                case "Информация об абоненте":
+                    _transaction = new Transactions.Client();
                     break;
             }
 
             _transaction.EMoney += TransactionsEMoney; //создания обработчика события для отображения наличных
         }
 
-        private void TransactionsEMoney(string text, Money money)
+        private void TransactionsEMoney(OperationEnum operationEnum, bool isSuccess, decimal money)
         {
-            //todo подумать money
+            var text = "";
+            switch (operationEnum)
+            {
+                case OperationEnum.Withdraw:
+                {
+                    text = isSuccess
+                        ? $"Операция снятия средств выполнена успешно. Со счета снято {money} руб."
+                        : $"Операция снятия средств не была выполнена успешно. Возможно, сумма для снятия ({money} руб.) превышает количество имеющихся средств. Проверьте ваш баланс и попробуйте еще раз.";
+                }
+                    break;
+
+                case OperationEnum.Deposit:
+                {
+                    text = isSuccess
+                        ? $"Операция пополнения счета выполнена успешно. На счет поступило {money} руб."
+                        : $"Операция пополнения счета не была выполнена успешно.";
+                }
+                    break;
+
+                default:
+                {
+
+                }
+                    break;
+            }
+
             MessageBox.Show(text);
+
             _transaction.EMoney -= TransactionsEMoney;
         }
 
