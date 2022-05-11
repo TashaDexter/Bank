@@ -37,26 +37,26 @@ namespace Bank.Views
             // 
             // buttonExecute
             // 
-            this.buttonExecute.Location = new System.Drawing.Point(22, 67);
+            this.buttonExecute.Location = new System.Drawing.Point(11, 49);
             this.buttonExecute.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.buttonExecute.Name = "buttonExecute";
-            this.buttonExecute.Size = new System.Drawing.Size(399, 60);
+            this.buttonExecute.Size = new System.Drawing.Size(483, 53);
             this.buttonExecute.TabIndex = 7;
-            this.buttonExecute.Text = "Снять";
+            this.buttonExecute.Text = "Вывести средства";
             this.buttonExecute.UseVisualStyleBackColor = true;
             // 
             // textValue
             // 
-            this.textValue.Location = new System.Drawing.Point(234, 16);
+            this.textValue.Location = new System.Drawing.Point(273, 9);
             this.textValue.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.textValue.Name = "textValue";
-            this.textValue.Size = new System.Drawing.Size(184, 28);
+            this.textValue.Size = new System.Drawing.Size(217, 28);
             this.textValue.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 16);
+            this.label1.Location = new System.Drawing.Point(11, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 24);
@@ -67,7 +67,7 @@ namespace Bank.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 150);
+            this.ClientSize = new System.Drawing.Size(510, 112);
             this.Controls.Add(this.buttonExecute);
             this.Controls.Add(this.textValue);
             this.Controls.Add(this.label1);

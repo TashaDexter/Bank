@@ -21,7 +21,7 @@ namespace Bank.Views
             _transaction = transaction;
             InitializeComponent();
 
-            var cryptedId = GetCryptedId(_card.Id);
+            var cryptedId = GetCryptedCardId(_card.Id.ToString());
             Text = $"Операции с картой: {cryptedId}";
         }
 
@@ -82,10 +82,10 @@ namespace Bank.Views
             _transaction.EMoney -= TransactionsEMoney;
         }
 
-        private string GetCryptedId(long id)
+        public static string GetCryptedCardId(string cardId)
         {
             var result = "";
-            var digits = id.ToString().ToCharArray();
+            var digits = cardId.ToCharArray();
             var firstPart = digits.Take(4);
 
             result = firstPart.Aggregate("", (current, first) => current + first);

@@ -19,6 +19,7 @@ namespace Bank.WorkingDatabase
                     $" AND t.ServiceId=s.Id " +
                     $" AND cr.TypeCardId=tc.Id " +
                     $" AND tc.CategoryCardId=ctc.Id " +
+                    $" AND cr.Id=t.CardId " +
                     $" AND cr.Number={identification.Id.ToString()}; ";
 
                 SqlDataAdapter = new SqlDataAdapter(SqlExpression, Connection);

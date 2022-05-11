@@ -37,17 +37,17 @@ namespace Bank.Views
             // 
             // buttonExecute
             // 
-            this.buttonExecute.Location = new System.Drawing.Point(6, 49);
+            this.buttonExecute.Location = new System.Drawing.Point(11, 49);
             this.buttonExecute.Margin = new System.Windows.Forms.Padding(11);
             this.buttonExecute.Name = "buttonExecute";
-            this.buttonExecute.Size = new System.Drawing.Size(488, 53);
+            this.buttonExecute.Size = new System.Drawing.Size(483, 53);
             this.buttonExecute.TabIndex = 5;
-            this.buttonExecute.Text = "Пополнить";
+            this.buttonExecute.Text = "Пополнить счет";
             this.buttonExecute.UseVisualStyleBackColor = true;
             // 
             // textValue
             // 
-            this.textValue.Location = new System.Drawing.Point(277, 9);
+            this.textValue.Location = new System.Drawing.Point(273, 9);
             this.textValue.Margin = new System.Windows.Forms.Padding(11);
             this.textValue.Name = "textValue";
             this.textValue.Size = new System.Drawing.Size(217, 28);
@@ -56,18 +56,18 @@ namespace Bank.Views
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1, 9);
+            this.label1.Location = new System.Drawing.Point(11, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 24);
+            this.label1.Size = new System.Drawing.Size(159, 24);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Укажите количество";
+            this.label1.Text = "Укажите сумму";
             // 
             // DepositСash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 114);
+            this.ClientSize = new System.Drawing.Size(510, 112);
             this.Controls.Add(this.buttonExecute);
             this.Controls.Add(this.textValue);
             this.Controls.Add(this.label1);
@@ -76,7 +76,7 @@ namespace Bank.Views
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "DepositСash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Вывод средств";
+            this.Text = "Пополнение счета";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

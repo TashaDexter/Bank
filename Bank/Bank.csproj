@@ -121,6 +121,9 @@
     <Compile Include="WorkingDatabase\ShowValuesDb.cs" />
     <Compile Include="WorkingDatabase\ShowTransactionDb.cs" />
     <Compile Include="WorkingDatabase\UpdateValueDb.cs" />
+    <EmbeddedResource Include="Views\ClientInformation.resx">
+      <DependentUpon>ClientInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ClientRegistration.resx">
       <DependentUpon>ClientRegistration.cs</DependentUpon>
     </EmbeddedResource>

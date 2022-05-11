@@ -38,7 +38,7 @@ namespace Bank.Views
             // labelBal
             // 
             this.labelBal.AutoSize = true;
-            this.labelBal.Location = new System.Drawing.Point(5, 20);
+            this.labelBal.Location = new System.Drawing.Point(20, 19);
             this.labelBal.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.labelBal.Name = "labelBal";
             this.labelBal.Size = new System.Drawing.Size(285, 26);
@@ -48,7 +48,7 @@ namespace Bank.Views
             // labelNum
             // 
             this.labelNum.AutoSize = true;
-            this.labelNum.Location = new System.Drawing.Point(5, 66);
+            this.labelNum.Location = new System.Drawing.Point(20, 65);
             this.labelNum.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.labelNum.Name = "labelNum";
             this.labelNum.Size = new System.Drawing.Size(165, 26);
@@ -58,7 +58,7 @@ namespace Bank.Views
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(5, 115);
+            this.labelDate.Location = new System.Drawing.Point(20, 114);
             this.labelDate.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(184, 26);
@@ -69,7 +69,7 @@ namespace Bank.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 174);
+            this.ClientSize = new System.Drawing.Size(512, 163);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelNum);
             this.Controls.Add(this.labelBal);
