@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Bank.Views;
 using Bank.WorkingCards;
 using Bank.WorkingDatabase;
@@ -31,7 +32,7 @@ namespace Bank.Transactions
             {
                 //запрашивается с БД текущий баланс
                 var moneyBd = Convert.ToDecimal(
-                    new ShowValuesDb().SetRequest("Card", "CurrentBalance", "CardNumber", Identification.Id.ToString())[0]
+                    new ShowValuesDb().SetRequest("Card", "CurrentBalance", "Number", Identification.Id.ToString())[0]
                         [0]
                         .ToString());
 
@@ -40,22 +41,22 @@ namespace Bank.Transactions
                 Money += moneyToDeposit; // изымается баланс с карты
 
                 //обновление баланса в БД
-                new UpdateValueDb().SetRequest("Card", "CurrentBalance", moneyBd.ToString().Replace(",", "."), "CardNumber",
+                new UpdateValueDb().SetRequest("Card", "CurrentBalance", moneyBd.ToString().Replace(",", "."), "Number",
                     Identification.Id.ToString());
+
+                var card = new ShowValuesDb().SetRequest("Card", "*", "Number", Identification.Id.ToString()).First();
                 
                 new InsertValueDb().SetRequest("Transactions",
-                    new List<string> { "IDClient", "IDService", "DateTransaction", "AmountPayment" },
+                    new List<string> { "CardId", "ClientId", "ServiceId", "Date", "Amount"},
                     new List<string>
                     {
-                        new ShowValuesDb().SetRequest
-                        ("Сlients", "ID", "СardAccount",
-                            new ShowValuesDb().SetRequest
-                                ("Card", "ID", "CardNumber", Identification.Id.ToString())[0][0].ToString()
-                        )[0][0].ToString(),
-
-                        "1", DateTime.Today.ToString(CultureInfo.InvariantCulture),
+                        card[0].ToString(),
+                        card[2].ToString(),
+                        "1",
+                        DateTime.Today.ToString(CultureInfo.InvariantCulture),
                         _deposit.textValue.Text.Replace(",", ".")
                     });
+                
                 _deposit.Close(); //закрытие формы
                 PerformOperation(OperationEnum.Deposit, true, Money); //вызов метода в котором вызывается событие
             }

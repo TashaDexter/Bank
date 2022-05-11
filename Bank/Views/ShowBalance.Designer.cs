@@ -78,7 +78,7 @@ namespace Bank.Views
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ShowBalance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Информация о карте";
+            this.Text = "Баланс карты";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

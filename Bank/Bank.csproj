@@ -53,6 +53,12 @@
     <Compile Include="Transactions\History.cs" />
     <Compile Include="Transactions\Withdraw.cs" />
     <Compile Include="Transactions\Transaction.cs" />
+    <Compile Include="Views\ClientInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ClientInformation.Designer.cs">
+      <DependentUpon>ClientInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ClientRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,7 @@
       <DependentUpon>WithdrawСash.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkingCards\Card.cs" />
+    <Compile Include="WorkingCards\Client.cs" />
     <Compile Include="WorkingCards\IIdentification.cs" />
     <Compile Include="WorkingCards\Money.cs" />
     <Compile Include="WorkingCards\Serialization.cs" />
@@ -114,6 +121,9 @@
     <Compile Include="WorkingDatabase\ShowValuesDb.cs" />
     <Compile Include="WorkingDatabase\ShowTransactionDb.cs" />
     <Compile Include="WorkingDatabase\UpdateValueDb.cs" />
+    <EmbeddedResource Include="Views\ClientRegistration.resx">
+      <DependentUpon>ClientRegistration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DepositСash.resx">
       <DependentUpon>DepositСash.cs</DependentUpon>
     </EmbeddedResource>

@@ -22,27 +22,27 @@ namespace Bank.Views
             InitializeComponent();
 
             var cryptedId = GetCryptedId(_card.Id);
-            Text += $": {cryptedId}";
+            Text = $"Операции с картой: {cryptedId}";
         }
 
         private void listView1_Click(object sender, EventArgs e)
         {
             switch (listView1.FocusedItem.Text)
             {
-                case "Пополнить счёт":
+                case "Пополнение счета":
                     _transaction = new Deposit(_card, _money);
                     break;
-                case "Вывести наличные":
-                    _transaction = new Transactions.Withdraw(_card, _money);
+                case "Вывод средств":
+                    _transaction = new Withdraw(_card, _money);
                     break;
-                case "Посмотреть баланс":
+                case "Баланс карты":
                     _transaction = new Transactions.ShowBalance(_card, _money);
                     break;
                 case "История транзакций":
                     _transaction = new Transactions.History(_card, _money);
                     break;
-                case "Информация об абоненте":
-                    _transaction = new Transactions.Client();
+                case "Информация о клиенте":
+                    _transaction = new Transactions.Client(_card.Client.Id);
                     break;
             }
 

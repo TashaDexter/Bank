@@ -59,11 +59,12 @@ namespace Bank.Views
             // 
             // buttonReg
             // 
-            this.buttonReg.Location = new System.Drawing.Point(708, 248);
+            this.buttonReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonReg.Location = new System.Drawing.Point(765, 248);
             this.buttonReg.Name = "buttonReg";
-            this.buttonReg.Size = new System.Drawing.Size(218, 42);
+            this.buttonReg.Size = new System.Drawing.Size(232, 42);
             this.buttonReg.TabIndex = 31;
-            this.buttonReg.Text = "Создать карту";
+            this.buttonReg.Text = "Зарегистрировать";
             this.buttonReg.UseVisualStyleBackColor = true;
             this.buttonReg.Click += new System.EventHandler(this.buttonReg_Click);
             // 
@@ -105,19 +106,22 @@ namespace Bank.Views
             // comboClient
             // 
             this.comboClient.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboClient.DropDownHeight = 500;
             this.comboClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboClient.FormattingEnabled = true;
+            this.comboClient.IntegralHeight = false;
+            this.comboClient.ItemHeight = 24;
             this.comboClient.Location = new System.Drawing.Point(12, 50);
             this.comboClient.Name = "comboClient";
-            this.comboClient.Size = new System.Drawing.Size(914, 32);
+            this.comboClient.Size = new System.Drawing.Size(985, 32);
             this.comboClient.TabIndex = 35;
             // 
             // CardRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 302);
+            this.ClientSize = new System.Drawing.Size(1009, 302);
             this.Controls.Add(this.comboClient);
             this.Controls.Add(this.comboTypeCard);
             this.Controls.Add(this.comboBank);
@@ -130,7 +134,7 @@ namespace Bank.Views
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CardRegistration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Регистрация";
+            this.Text = "Регистрация новой карты";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

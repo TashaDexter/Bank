@@ -1,16 +1,35 @@
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
-using Bank.WorkingCards;
+using Bank.WorkingDatabase;
 
 namespace Bank.Views
 {
     public partial class ClientRegistration : Form
     {
-        private readonly Serialization _serialization;
-        public ClientRegistration(Serialization serialization)
+        public ClientRegistration()
         {
-            _serialization = serialization;
             InitializeComponent();
-            //todo сделать добавление клиентов
+        }
+
+        private void buttonReg_Click(object sender, EventArgs e)
+        {
+            var firstName = textBoxFirstName.Text;
+            var lastName = textBoxLastName.Text;
+            var parentName = textBoxParentName.Text;
+            var address = textBoxAddress.Text;
+            var phone = textBoxPhone.Text;
+
+            var columns = new List<string>
+                { "FirstName", "LastName", "ParentName", "Address", "Phone" };
+            var values = new List<string>
+            {
+                firstName, lastName, parentName, address, phone
+            };
+            new InsertValueDb().SetRequest("Clients", columns, values);
+
+            MessageBox.Show(@"Клиент добавлен успешно!");
+            Close();
         }
     }
 }

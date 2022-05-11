@@ -1,13 +1,11 @@
-using System.Windows.Forms;
-
 namespace Bank.Transactions
 {
     internal class Client : Transaction
     {
-        public Client()
+        public Client(long clientId)
         {
-            MessageBox.Show("Открывается окно информации об абоненте");
+            var clientInformation = new Views.ClientInformation(clientId);
+            clientInformation.Show();
         }
-        
     }
 }

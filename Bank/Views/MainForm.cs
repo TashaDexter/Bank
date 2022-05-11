@@ -78,7 +78,8 @@ namespace Bank.Views
                     pinCodeTextBox.Enabled = true;
                     UpdateButton.Enabled = true;
 
-                    CardComboBox.SelectedIndex = 0;
+                    if (CardComboBox.Items.Count > 0)
+                        CardComboBox.SelectedIndex = 0;
                 }
             }
             catch (Exception exception)
@@ -167,7 +168,7 @@ namespace Bank.Views
 
         private void ClientMenu_Click(object sender, EventArgs e)
         {
-            _clientRegistration = new ClientRegistration(_serialization);
+            _clientRegistration = new ClientRegistration();
             _clientRegistration.Show();
         }
     }

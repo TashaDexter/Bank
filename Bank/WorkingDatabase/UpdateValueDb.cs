@@ -4,11 +4,11 @@ namespace Bank.WorkingDatabase
 {
     class UpdateValueDb : MainWorkDb //класс в котором создается запрос для обновления данных в бд
     {
-        public void SetRequest(string table, string column, string value, string whereColum, string whereValue)
+        public void SetRequest(string table, string column, string value, string whereColumn, string whereValue)
         {
             Action = () =>
             {
-                var sqlExpression = $"UPDATE {table} SET {column}={value} WHERE {whereColum}={whereValue}";
+                var sqlExpression = $"UPDATE {table} SET {column}={value} WHERE {whereColumn}={whereValue}";
                 SqlCommand = new SqlCommand(sqlExpression, Connection);
                 SqlCommand.ExecuteNonQuery();
             };

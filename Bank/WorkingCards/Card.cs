@@ -9,9 +9,8 @@ namespace Bank.WorkingCards
     public class Card : IIdentification
     {
         public long Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string ParentName { get; set; }
+
+        public Client Client { get; set; }
         public string Code { get; set; }
         public string Type { get; set; }
         public string Category { get; set; }

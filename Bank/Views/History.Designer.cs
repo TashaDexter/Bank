@@ -43,14 +43,14 @@ namespace Bank.Views
             this.dataGridViewHistory.Name = "dataGridViewHistory";
             this.dataGridViewHistory.RowHeadersWidth = 51;
             this.dataGridViewHistory.RowTemplate.Height = 24;
-            this.dataGridViewHistory.Size = new System.Drawing.Size(824, 498);
+            this.dataGridViewHistory.Size = new System.Drawing.Size(965, 498);
             this.dataGridViewHistory.TabIndex = 0;
             // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 498);
+            this.ClientSize = new System.Drawing.Size(965, 498);
             this.Controls.Add(this.dataGridViewHistory);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);

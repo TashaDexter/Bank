@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Bank.Views;
 using Bank.WorkingCards;
 using Bank.WorkingDatabase;
@@ -24,14 +25,14 @@ namespace Bank.Transactions
         {
             //получить процент от банка к которому привязана карта
             var percent = new ShowValuesDb().SetRequest
-                ("Bank", "Perent", "ID", new ShowValuesDb().SetRequest
-                        ("Card", "IDBank", "CardNumber", Identification.Id.ToString())
+                ("Bank", "Perent", "Id", new ShowValuesDb().SetRequest
+                        ("Card", "BankId", "Number", Identification.Id.ToString())
                     [0][0].ToString())
                 [0][0].ToString();
 
             //получить дату создания карты
             var dateCard = (DateTime)(new ShowValuesDb().SetRequest
-                ("Card", "DateRececing", "CardNumber", Identification.Id.ToString())[0][0]);
+                ("Card", "DateRececing", "Number", Identification.Id.ToString())[0][0]);
 
             //получить сколько дней баланс хранится на счету
             var differenceDate = (DateTime.Today - dateCard).Days.ToString();
@@ -41,7 +42,7 @@ namespace Bank.Transactions
                                  (1 + (Convert.ToDecimal(differenceDate) * Convert.ToDecimal(percent) / 36000)));
             var moneyBd =
                 Convert.ToDecimal(
-                    new ShowValuesDb().SetRequest("Card", "CurrentBalance", "CardNumber", Identification.Id.ToString())
+                    new ShowValuesDb().SetRequest("Card", "CurrentBalance", "Number", Identification.Id.ToString())
                         [0][0].ToString());
             var moneyToWithDraw = Convert.ToDecimal(_withdraw.textValue.Text);
             
@@ -54,23 +55,22 @@ namespace Bank.Transactions
             {
                 moneyBd -= moneyToWithDraw;
                 Money += moneyReceived; //получение баланса с процентом начисления
-                new UpdateValueDb().SetRequest("Card", "CurrentBalance", moneyBd.ToString().Replace(",", "."), "CardNumber",
+                new UpdateValueDb().SetRequest("Card", "CurrentBalance", moneyBd.ToString().Replace(",", "."), "Number",
                     Identification.Id.ToString());
 
+                var card = new ShowValuesDb().SetRequest("Card", "*", "Number", Identification.Id.ToString()).First();
+                
                 new InsertValueDb().SetRequest("Transactions",
-                    new List<string> { "IDClient", "IDService", "DateTransaction", "AmountPayment", "AccrualBank" },
+                    new List<string> { "CardId", "ClientId", "ServiceId", "Date", "Amount"},
                     new List<string>
                     {
-                        new ShowValuesDb().SetRequest
-                        ("Сlients", "ID", "СardAccount",
-                            new ShowValuesDb().SetRequest
-                                ("Card", "ID", "CardNumber", Identification.Id.ToString())[0][0].ToString()
-                        )[0][0].ToString(),
-
-                        "2", DateTime.Today.ToString(CultureInfo.InvariantCulture),
-                        _withdraw.textValue.Text.Replace(",", "."),
-                        (Convert.ToDecimal(differenceDate) * Convert.ToDecimal(percent)).ToString().Replace(",", ".")
+                        card[0].ToString(),
+                        card[2].ToString(),
+                        "2",
+                        DateTime.Today.ToString(CultureInfo.InvariantCulture),
+                        _withdraw.textValue.Text.Replace(",", ".")
                     });
+                
                 _withdraw.Close();
                 PerformOperation(OperationEnum.Withdraw, true, Money);
             }
