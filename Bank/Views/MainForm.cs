@@ -35,7 +35,7 @@ namespace Bank.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_card.Code == pinCodeTextBox.Text)
+            if (_card.PinCode == pinCodeTextBox.Text)
             {
                 _operations = new Operations(_card, _money, _transaction, _serialization);
                 _operations.Show();
@@ -170,6 +170,17 @@ namespace Bank.Views
         {
             _clientRegistration = new ClientRegistration();
             _clientRegistration.Show();
+        }
+
+        private void pinCodeTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var number = e.KeyChar;
+
+            if (!char.IsDigit(number) && number != (char)Keys.Back && number != (char)Keys.Delete)
+            {
+                e.Handled = true;
+                MessageBox.Show(@"Пин-код должен состоять из 4-х цифр");
+            }
         }
     }
 }

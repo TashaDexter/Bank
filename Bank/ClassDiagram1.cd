@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bank.Program" Collapsed="true">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_Bank.Properties.Resources" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAABAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_Bank.Properties.Settings" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Transactions.Client" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transactions\Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Transactions.Deposit" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transactions\Deposit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Transactions.History" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Transactions\History.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Transactions.ShowBalance" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transactions\ShowBalance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Transactions.Transaction" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transactions\Transaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Transactions.Withdraw" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transactions\Withdraw.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Views.CardRegistration" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABBApBCAAABCCAQAAAZAEAAQAAAgACE=</HashCode>
+      <FileName>Views\CardRegistration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Views.ClientInformation" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ClientInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Views.ClientRegistration" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABBAgACAAABCAAAAEABAAAAAAAAAACA=</HashCode>
+      <FileName>Views\ClientRegistration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Views.DepositСash" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCAAABAAAACAAAACAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Views\DepositСash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Views.History" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\History.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Views.Form1" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAgAAAKAgQRwgAAiAAQFCAMw/AAgCwfAPCABAABA=</HashCode>
+      <FileName>Views\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Views.Operations" Collapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgQQAAAiAAADCAwQAAAAAQAAAAIAAAAA=</HashCode>
+      <FileName>Views\Operations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Views.ShowBalance" Collapsed="true">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACACQAAAAACAAAACAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ShowBalance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.Views.WithdrawСash" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCAAABAAAACAAAACAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Views\WithdrawСash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.WorkingCards.Card" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAEAAAAAAAAAAAAAAAAAAAAAAAQAAAAAACAQ=</HashCode>
+      <FileName>WorkingCards\Card.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bank.WorkingCards.Client" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAAAAAAAABAAAAAAAACAAAAIAAAAAg=</HashCode>
+      <FileName>WorkingCards\Client.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bank.WorkingCards.Money" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>WorkingCards\Money.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.WorkingCards.Serialization" Collapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkingCards\Serialization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.WorkingDatabase.Authorization" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAUAgAAAAA=</HashCode>
+      <FileName>WorkingDatabase\Authorization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.WorkingDatabase.Connect" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkingDatabase\Connect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.WorkingDatabase.InsertValueDb" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkingDatabase\InsertValueDb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.WorkingDatabase.MainWorkDb" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEIEAAAAAAAAAAAgAAABAAAAgAAAAQ=</HashCode>
+      <FileName>WorkingDatabase\MainWorkDb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.WorkingDatabase.ShowTransactionDb" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkingDatabase\ShowTransactionDb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.WorkingDatabase.ShowValuesDb" Collapsed="true">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>WorkingDatabase\ShowValuesDb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank.WorkingDatabase.UpdateValueDb" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkingDatabase\UpdateValueDb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Bank.WorkingCards.IIdentification" Collapsed="true">
+    <Position X="12.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkingCards\IIdentification.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Bank.Transactions.OperationEnum" Collapsed="true">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Transactions\OperationEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

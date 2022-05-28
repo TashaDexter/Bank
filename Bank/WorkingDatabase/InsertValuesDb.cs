@@ -3,7 +3,10 @@ using System.Data.SqlClient;
 
 namespace Bank.WorkingDatabase
 {
-    internal class InsertValueDb : MainWorkDb //класс который создает запрос на добавление данных в бд и обрабатывает.
+    /// <summary>
+    /// Класс для добавления данных в БД
+    /// </summary>
+    internal class InsertValuesDb : MainWorkDb
     {
         public void SetRequest(string table, List<string> columns, List<string> values)
         {

@@ -5,7 +5,10 @@ using System.Data.SqlClient;
 
 namespace Bank.WorkingDatabase
 {
-    public class ShowValuesDb : MainWorkDb //класс который предназначен для получения данных с бд в виде списка
+    /// <summary>
+    /// Класс для получения данных из БД
+    /// </summary>
+    public class ShowValuesDb : MainWorkDb
     {
         private readonly List<ArrayList> _listArray = new List<ArrayList>();
 

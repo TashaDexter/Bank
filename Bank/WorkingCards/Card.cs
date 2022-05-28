@@ -11,7 +11,7 @@ namespace Bank.WorkingCards
         public long Id { get; set; }
 
         public Client Client { get; set; }
-        public string Code { get; set; }
+        public string PinCode { get; set; }
         public string Type { get; set; }
         public string Category { get; set; }
     }

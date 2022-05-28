@@ -239,10 +239,12 @@ namespace Bank.Views
             // 
             this.pinCodeTextBox.Enabled = false;
             this.pinCodeTextBox.Location = new System.Drawing.Point(18, 290);
+            this.pinCodeTextBox.MaxLength = 4;
             this.pinCodeTextBox.Name = "pinCodeTextBox";
             this.pinCodeTextBox.PasswordChar = '*';
             this.pinCodeTextBox.Size = new System.Drawing.Size(132, 32);
             this.pinCodeTextBox.TabIndex = 14;
+            this.pinCodeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pinCodeTextBox_KeyPress);
             // 
             // button0
             // 

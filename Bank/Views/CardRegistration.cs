@@ -75,7 +75,7 @@ namespace Bank.Views
                 _idCategoryCard,
                 _idTypeCard
             };
-            new InsertValueDb().SetRequest("Card", cardColumns, cardValues);
+            new InsertValuesDb().SetRequest("Cards", cardColumns, cardValues);
 
             //Создание новой карты как объект;
             _card = new Card
@@ -89,7 +89,7 @@ namespace Bank.Views
                     Address = client[4].ToString(),
                     Phone = client[5].ToString()
                 },
-                Code = pinCode,
+                PinCode = pinCode,
                 Id = long.Parse(number),
                 Type = type,
                 Category = category
@@ -99,8 +99,8 @@ namespace Bank.Views
             _serialization.Serialize(_card,
                 $"Cards\\ {_card.Id} _ {_card.Client.Id} _ {category} {type}.xml");
 
-            var cardId = new ShowValuesDb().SetRequest("Card", "Id", "Number", number)[0][0].ToString();
-            new InsertValueDb().SetRequest("Transactions",
+            var cardId = new ShowValuesDb().SetRequest("Cards", "Id", "Number", number)[0][0].ToString();
+            new InsertValuesDb().SetRequest("Transactions",
                 new List<string> { "CardId", "ClientId", "ServiceId", "Date", "Amount" },
                 new List<string>
                 {
@@ -114,7 +114,7 @@ namespace Bank.Views
             MessageBox.Show("Карта успешно создана." +
                             "\nВаши данные:" +
                             $"\nНомер карты: {_card.Id}" +
-                            $"\nПин-код: {_card.Code}" +
+                            $"\nПин-код: {_card.PinCode}" +
                             $"\nСохраните данные в надежном месте, для смены пин-кода или изменения других данных обратитесь к администратору.");
             Close();
         }
@@ -125,7 +125,7 @@ namespace Bank.Views
 
             //Отображение всех банков
             _listArrays = new List<ArrayList>();
-            _listArrays = new ShowValuesDb().SetRequest("Bank");
+            _listArrays = new ShowValuesDb().SetRequest("Banks");
             foreach (var arr in _listArrays)
             {
                 comboBank.Items.Add(arr[1].ToString());

@@ -117,10 +117,10 @@
     <Compile Include="WorkingDatabase\Authorization.cs" />
     <Compile Include="WorkingDatabase\Connect.cs" />
     <Compile Include="WorkingDatabase\MainWorkDb.cs" />
-    <Compile Include="WorkingDatabase\InsertValueDb.cs" />
+    <Compile Include="WorkingDatabase\InsertValuesDb.cs" />
     <Compile Include="WorkingDatabase\ShowValuesDb.cs" />
     <Compile Include="WorkingDatabase\ShowTransactionDb.cs" />
-    <Compile Include="WorkingDatabase\UpdateValueDb.cs" />
+    <Compile Include="WorkingDatabase\UpdateValuesDb.cs" />
     <EmbeddedResource Include="Views\ClientInformation.resx">
       <DependentUpon>ClientInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +158,7 @@
     <EmbeddedResource Include="Views\WithdrawСash.resx">
       <DependentUpon>WithdrawСash.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

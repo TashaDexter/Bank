@@ -18,11 +18,11 @@ namespace Bank.Views
             listBox1.Items.Add($"\nАдрес: {client[4]}");
             listBox1.Items.Add($"\nНомер телефона: {client[5]}");
 
-            var cards = new ShowValuesDb().SetRequest("Card", "*", "ClientId", clientId.ToString());
+            var cards = new ShowValuesDb().SetRequest("Cards", "*", "ClientId", clientId.ToString());
             foreach (var card in cards)
             {
                 listBox1.Items.Add("");
-                var bankName = new ShowValuesDb().SetRequest("Bank", "Name", "Id", card[1].ToString())[0][0].ToString();
+                var bankName = new ShowValuesDb().SetRequest("Banks", "Name", "Id", card[1].ToString())[0][0].ToString();
                 listBox1.Items.Add($"Номер карты: {Operations.GetCryptedCardId(card[3].ToString())}");
                 listBox1.Items.Add($"Банк-эмитент: {bankName}");
                 listBox1.Items.Add($"Пин-код: {card[4]}");

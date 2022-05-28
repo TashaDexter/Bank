@@ -2,7 +2,10 @@
 
 namespace Bank.WorkingDatabase
 {
-    class UpdateValueDb : MainWorkDb //класс в котором создается запрос для обновления данных в бд
+    /// <summary>
+    /// Класс для обновления данных в БД
+    /// </summary>
+    internal class UpdateValuesDb : MainWorkDb
     {
         public void SetRequest(string table, string column, string value, string whereColumn, string whereValue)
         {

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Bank.WorkingDatabase;
 
@@ -19,17 +20,24 @@ namespace Bank.Views
             var parentName = textBoxParentName.Text;
             var address = textBoxAddress.Text;
             var phone = textBoxPhone.Text;
-
-            var columns = new List<string>
-                { "FirstName", "LastName", "ParentName", "Address", "Phone" };
-            var values = new List<string>
+            
+            if (!Regex.IsMatch(phone, @"\+37377\d\d{5}", RegexOptions.IgnoreCase))
             {
-                firstName, lastName, parentName, address, phone
-            };
-            new InsertValueDb().SetRequest("Clients", columns, values);
+                MessageBox.Show("Ошибка ввода данных. Пожалуйста, введите номер телефона в формате: +37377******");
+            }
+            else
+            {
+                var columns = new List<string>
+                    { "FirstName", "LastName", "ParentName", "Address", "Phone" };
+                var values = new List<string>
+                {
+                    firstName, lastName, parentName, address, phone
+                };
+                new InsertValuesDb().SetRequest("Clients", columns, values);
 
-            MessageBox.Show(@"Клиент добавлен успешно!");
-            Close();
+                MessageBox.Show(@"Клиент добавлен успешно!");
+                Close();
+            }
         }
     }
 }

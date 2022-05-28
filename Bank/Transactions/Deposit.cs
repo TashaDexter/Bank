@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Windows.Forms;
 using Bank.Views;
 using Bank.WorkingCards;
 using Bank.WorkingDatabase;
@@ -32,7 +33,7 @@ namespace Bank.Transactions
             {
                 //запрашивается с БД текущий баланс
                 var moneyBd = Convert.ToDecimal(
-                    new ShowValuesDb().SetRequest("Card", "CurrentBalance", "Number", Identification.Id.ToString())[0]
+                    new ShowValuesDb().SetRequest("Cards", "CurrentBalance", "Number", Identification.Id.ToString())[0]
                         [0]
                         .ToString());
 
@@ -41,13 +42,14 @@ namespace Bank.Transactions
                 Money += moneyToDeposit; // изымается баланс с карты
 
                 //обновление баланса в БД
-                new UpdateValueDb().SetRequest("Card", "CurrentBalance", moneyBd.ToString().Replace(",", "."), "Number",
+                new UpdateValuesDb().SetRequest("Cards", "CurrentBalance", moneyBd.ToString().Replace(",", "."),
+                    "Number",
                     Identification.Id.ToString());
 
-                var card = new ShowValuesDb().SetRequest("Card", "*", "Number", Identification.Id.ToString()).First();
-                
-                new InsertValueDb().SetRequest("Transactions",
-                    new List<string> { "CardId", "ClientId", "ServiceId", "Date", "Amount"},
+                var card = new ShowValuesDb().SetRequest("Cards", "*", "Number", Identification.Id.ToString()).First();
+
+                new InsertValuesDb().SetRequest("Transactions",
+                    new List<string> { "CardId", "ClientId", "ServiceId", "Date", "Amount" },
                     new List<string>
                     {
                         card[0].ToString(),
@@ -56,9 +58,13 @@ namespace Bank.Transactions
                         DateTime.Today.ToString(CultureInfo.InvariantCulture),
                         _deposit.textValue.Text.Replace(",", ".")
                     });
-                
+
                 _deposit.Close(); //закрытие формы
                 PerformOperation(OperationEnum.Deposit, true, Money); //вызов метода в котором вызывается событие
+            }
+            catch (FormatException formatException)
+            {
+                MessageBox.Show(@"Ошибка ввода данных. Пожалуйста, введите целое число или десятичное число с разеделителем в виде точки.");
             }
             catch (Exception exception)
             {
